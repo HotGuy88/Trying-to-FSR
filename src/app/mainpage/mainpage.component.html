@@ -1,0 +1,55 @@
+
+<div class = 'card-panel blue lighten-1'>
+    <span class = 'white-text text-darken-2' style='font-size: 3.0em;'>
+      {{title}}
+    </span>
+  </div>
+  
+  <div class= 'row'>
+    <div class = 'input-field col s6'>
+      <input id='id' [(ngModel)]='user_id' class='validate' >
+      <label for="id">ID : </label>
+    </div>
+  </div>
+  
+  <div class = 'row'>
+    <div class = 'input-field col s12'>
+      <input id='pw' [(ngModel)]='user_pw' class="validate" >
+      <label for='pw'>PW :  </label>
+    </div>
+  </div>
+  
+  
+  <button (click) ='clickSignUp()' class ="waves-effect waves-light btn" name='signup'>회원가입
+    <i class="material-icons left">cloud</i>
+  </button>
+  
+  <br>
+  <br>
+  <button (click) ='clickSignIn()' class="btn waves-effect waves-light" name='login'>로그인
+    <i class="material-icons right">send</i>
+  </button>
+  
+  
+  
+  
+  <div class='card-panel'>
+  
+    <div *ngIf='visible_UP'>
+      <span class='black-text text-darken-2'> 회원가입 되었습니다!</span>
+    </div>
+  
+    <div *ngIf='visible_IN'>
+      <span class='black-text text-darken-2'> 로그인 되었습니다!</span>
+    </div>
+  
+    <br>
+    <br>
+  
+    <div *ngIf='visible_INFO'>
+      <span class='blue-text text-darken-2'> ID : {{user_id}}</span>
+      <br>
+      <span class='blue-text text-darken-2'> PW : {{user_pw}}</span>
+    </div>
+  </div>
+  
